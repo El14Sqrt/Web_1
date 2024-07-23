@@ -13,3 +13,9 @@ app.get('/formRegistrazione', (req, res) => {
     console.log("Mi hai chiesto la form di registrazione");
     res.sendFile("formSemplice.html", { root: './htdoc' });
 })
+
+//pagina di gestione dei dati della form se il metodo è GET
+app.get('/gestisciDatiForm', (req, res) => {
+    console.log(req.query.fname);
+    res.send("<html>Buona serata a tutti" + req.query.fname + "</html>");
+});
